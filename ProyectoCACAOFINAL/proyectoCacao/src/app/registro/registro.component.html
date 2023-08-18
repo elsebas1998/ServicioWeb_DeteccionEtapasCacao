@@ -1,0 +1,90 @@
+<div class="contenido_registro">
+    <div class="container">
+        <div class="estructura_registro">
+            <div class="estructura">
+                <div class="registro">
+                    <div class="row justify-content-center h-100">
+                        <div class="col-12">
+                            <form [formGroup]="formRegistro" (ngSubmit)="registrarse()" class="form_registro px-4 py-5 py-sm-3 py-md-5 px-md-5">
+                                <div class="text-center mb-3">
+                                    <h2>Crear Cuenta</h2>
+                                </div>
+
+                                <div class="mb-3">
+                                    <div class="mb-1">
+                                        <label for="nombre" class="form-label">Nombre y Apellido</label>
+                                        <input type="text" class="form-control form-control-sm" id="nombre" formControlName="nombre">
+                                    </div>
+                                    <div *ngIf="formRegistro.controls['nombre'].invalid && formRegistro.controls['nombre'].touched" class="alert alert-danger py-2 mb-0">
+                                        <div *ngIf="formRegistro.controls['nombre'].errors?.['required']">El nombre es requerido.</div>
+                                        <div *ngIf="formRegistro.controls['nombre'].errors?.['minlength']">El nombre debe ser mayor de 3 caracteres.</div>
+                                    </div>
+                                </div>
+
+                                <div class="mb-3">
+                                    <div class="mb-1">
+                                        <label for="direccion" class="form-label">Dirección</label>
+                                        <input type="text" class="form-control form-control-sm" id="direccion" formControlName="direccion">
+                                    </div>
+                                    <div *ngIf="formRegistro.controls['direccion'].invalid && formRegistro.controls['nombre'].touched" class="alert alert-danger py-2 mb-0">
+                                        <div *ngIf="formRegistro.controls['direccion'].errors?.['required']">El nombre es requerido.</div>
+                                        <div *ngIf="formRegistro.controls['direccion'].errors?.['minlength']">El nombre debe ser mayor de 3 caracteres.</div>
+                                    </div>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="correo" class="form-label">Correo electrónico</label>
+                                    <div class="mb-1">
+                                        <input type="email" formControlName="username" class="form-control form-control-sm" id="email" aria-describedby="emailHelp">
+                                    </div>
+                                    <div *ngIf="formRegistro.controls['username'].invalid && formRegistro.controls['username'].touched" class="alert alert-danger py-2 mb-0">
+                                        <div *ngIf="formRegistro.controls['username'].errors?.['required']">El correo electrónico es requerido.</div>
+                                        <div *ngIf="formRegistro.controls['username'].errors?.['email']">El correo electrónico debe ser válido.</div>
+                                    </div>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="password" class="form-label">Contraseña</label>
+                                    <div class="input-group mb-1 d-flex">
+                                        <input type="{{ passwordType }}" formControlName="password" class="form-control form-control-sm" id="password" autocomplete="password">
+                                        <button id="show_password" class="btn btn-primary py-1 px-3 px-md-2 px-lg-3" type="button" (click)="mostrarPassword()"> 
+                                            <i class="bi" [ngClass]="{ 'bi-eye-fill': iconEye, 'bi-eye-slash-fill': !iconEye }"></i>
+                                        </button>
+                                    </div>
+                                    <div *ngIf="formRegistro.controls['password'].invalid && formRegistro.controls['password'].touched" class="alert alert-danger py-2 mb-0">
+                                        <div *ngIf="formRegistro.controls['password'].errors?.['required']">Se requiere llenar el campo de contraseña.</div>
+                                        <div *ngIf="formRegistro.controls['password'].errors?.['minlength']">La contraseña debe contener al menos 8 caracteres.</div>
+                                    </div>
+                                </div>
+
+                                <div class="mb-4">
+                                    <label for="password" class="form-label">Confirmar Contraseña</label>
+                                    <div class="input-group mb-1 d-flex">
+                                        <input type="{{ passwordConfirmarType }}" class="form-control form-control-sm" id="passwordConfirmar" formControlName="passwordConfirmar" autocomplete="password">
+                                        <button id="show_passwordConfirmar" class="btn btn-primary py-1 px-3 px-md-2 px-lg-3" type="button" (click)="mostrarPasswordConfirmar()"> 
+                                            <i class="bi" [ngClass]="{ 'bi-eye-fill': iconEyeConfirmar, 'bi-eye-slash-fill': !iconEyeConfirmar }"></i>
+                                        </button>
+                                    </div>
+                                    <div *ngIf="formRegistro.controls['passwordConfirmar'].invalid && formRegistro.controls['passwordConfirmar'].touched" class="alert alert-danger py-2 mb-0">
+                                        <div *ngIf="formRegistro.controls['passwordConfirmar'].errors?.['required']">Se requiere llenar el campo de confirmar contraseña.</div>
+                                        <div *ngIf="formRegistro.controls['passwordConfirmar'].errors?.['minlength']">La contraseña debe contener al menos 8 caracteres.</div>
+                                    </div>
+                                </div>
+
+                                <div class="text-center btn_formRegistro">
+                                    <button type="button" routerLink="/login" class="btn btn_regresar mx-2">
+                                        Regresar
+                                    </button>
+
+                                    <button type="submit" class="btn btn_enviar mx-2">
+                                        Crear Cuenta
+                                    </button>
+                                </div>                    
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>      
+    </div>
+</div>

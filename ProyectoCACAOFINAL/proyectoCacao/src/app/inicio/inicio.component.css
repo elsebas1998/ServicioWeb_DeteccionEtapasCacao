@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;700&display=swap');
+
+.inicio {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+}
+
+.contenido_inicio {
+    padding-top: 100px;
+    padding-bottom: 120px;
+}
+
+.foto_cacao {
+    border-radius: 20px;
+    width: 380px;
+    height: 380px;
+    margin: auto;
+    background: #fff;
+}
+
+.foto_cacao .cacao img {
+    border-radius: 20px;
+    width: 380px;
+    height: 380px;
+}
+
+.foto_cacao .icon_cacao {
+    margin: auto;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.foto_cacao .icon_cacao img {
+    width: 200px;
+    height: 200px;
+}
+
+.cambiar_foto .form-label {
+    font-weight: 700;
+}
+
+input[type="file"], .cambiar_foto .form-label, .btn_analizar {
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+.btn_analizar {
+    background: #6C3428;
+    color: #fff;
+}
+
+.pie_pagina svg {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: -1;
+}

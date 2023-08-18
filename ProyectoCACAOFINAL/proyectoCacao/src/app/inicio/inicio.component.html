@@ -1,0 +1,50 @@
+<div class="inicio">
+    <app-menu></app-menu>
+
+    <div class="contenido_inicio">
+        <div class="container">
+            <div class="row justify-content-center justify-content-center w-100">
+                <div class="col-12 col-md-6 px-3 py-4">
+                    <div class="cambiar_foto">
+                        <form [formGroup]="formCambiarFoto" (ngSubmit)="SubirfotoCacao()">
+                            <div class="mb-3">
+                                <label for="subir-foto" class="form-label mb-2">Subir foto</label>
+                                <input class="form-control btn-circular" type="file" id="subir-foto" formControlName="imageFile" (change)="subirFoto($event)">
+                            </div>
+        
+                            <div class="mb-4">
+                                <button type="submit" class="btn btn_analizar btn-circular"  [disabled]="btnstateFoto" style="width: 100%;">Analizar</button>
+                            </div>
+
+                            <div class="alert alert-warning text-center" role="alert" *ngIf="mostrarResultado">
+                                <p class="mb-0" [innerHTML]="textoFase"></p>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 align-self-center text-center px-3 py-4">
+                    <div class="foto_cacao shadow">
+                        <ng-container *ngIf="foto_cacao; else noFoto">
+                            <div class="cacao">
+                                <img src="{{ foto_cacao }}" alt="Foto usuario">
+                            </div>
+                        </ng-container>
+                        <ng-template #noFoto>
+                            <div class="icon_cacao">
+                                <img src="../../assets/imagenes/icon-cacao.png" alt="Icono Cacao">
+                            </div>
+                        </ng-template>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="pie_pagina">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 200">
+            <path fill="#884a39" fill-opacity="1" d="M0,64L40,58.7C80,53,160,43,240,48C320,53,400,75,480,96C560,117,640,139,720,128C800,117,880,75,960,69.3C1040,64,1120,96,1200,112C1280,128,1360,128,1400,128L1440,128L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z"></path>
+            <text x="50" y="180" font-family="Arial" font-size="10" fill="white">© 2023 Todos los derechos reservados. Cacao Ripeness</text>
+        </svg>
+    </div>
+</div>

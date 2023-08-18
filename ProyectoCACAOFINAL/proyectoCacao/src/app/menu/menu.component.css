@@ -1,0 +1,46 @@
+.navbar_logeado {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    background: #6c3428;
+}
+
+.contenido_navbar {
+    position: relative;
+    display: flex;
+    justify-content: end;
+}
+
+.contenido_navbar .logo {
+    position: absolute;
+    top: -24px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 150px;
+    height: 150px;
+    background: #6c3428;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contenido_navbar .navbar-brand, .contenido_navbar .navbar-brand img {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+}
+
+.contenido_navbar .navbar-brand {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cerrar_sesion i {
+    color: #ECC998;
+    font-size: 25px;
+    cursor: pointer;
+}
